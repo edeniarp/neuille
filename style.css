@@ -30,19 +30,44 @@ body {
     font-size: 24px;
     text-align: center;
     cursor: pointer;
-    animation: bounce 3s infinite;
     position: relative;
     z-index: 1;
+    animation: bounceUp 3s infinite;
     transition: transform 0.8s, background 0.8s;
 }
 
-/* Animation de rebond */
-@keyframes bounce {
+/* Animation de rebond vers le haut */
+@keyframes bounceUp {
     0%, 100% {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-10px); /* Déplacement vertical léger */
+        transform: translateY(-10px); /* Déplacement vertical vers le haut */
+    }
+}
+
+/* Animation de la lueur bleue */
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px; /* Même bord arrondi que le bouton */
+    box-shadow: 0 0 30px rgba(0, 0, 255, 0.75); /* Lueur bleue plus forte */
+    z-index: -1;
+    filter: blur(10px);
+    animation: glow 3s infinite;
+}
+
+/* Animation pour la lueur décalée */
+@keyframes glow {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px); /* Décalage de la lueur */
     }
 }
 
