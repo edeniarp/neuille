@@ -1,109 +1,30 @@
-/* Style général du body */
 body {
     margin: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #888888; /* Fond gris */
-    overflow: hidden;
+    padding: 0;
+    height: 200vh; /* Pour créer un scroll vertical */
+    background-color: #808080; /* Gris */
     font-family: Arial, sans-serif;
-}
-
-/* Conteneur central */
-.container {
-    position: relative;
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 100vh;
-    width: 100vw;
+    align-items: center;
 }
 
-/* Bouton animé */
-.button {
-    padding: 20px 40px;
-    background: linear-gradient(45deg, #ff0000, #0000ff); /* Dégradé rouge et bleu */
-    border-radius: 20px; /* Coins arrondis */
-    box-shadow: 0 0 20px rgba(0, 0, 255, 0.5); /* Lueur bleue */
-    color: white;
-    font-size: 24px;
-    text-align: center;
-    cursor: pointer;
+.scroll-container {
     position: relative;
-    z-index: 1;
-    animation: bounceUp 3s infinite;
-    transition: transform 0.8s, background 0.8s;
+    width: 100%;
+    height: 100%;
 }
 
-/* Animation de rebond vers le haut */
-@keyframes bounceUp {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px); /* Déplacement vertical vers le haut */
-    }
+.hello {
+    position: fixed;
+    bottom: -100px; /* Débute hors de la vue */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    color: white;
+    transition: bottom 1s ease-out;
 }
 
-/* Animation de la lueur bleue */
-.button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 20px; /* Même bord arrondi que le bouton */
-    box-shadow: 0 0 30px rgba(0, 0, 255, 0.75); /* Lueur bleue plus forte */
-    z-index: -1;
-    filter: blur(10px);
-    animation: glow 3s infinite;
-}
-
-/* Animation pour la lueur décalée */
-@keyframes glow {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-15px); /* Décalage de la lueur */
-    }
-}
-
-/* Zoom sur le bouton */
-.zoom {
-    animation: zoomOut 2s forwards;
-    box-shadow: none;
-}
-
-@keyframes zoomOut {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(10); /* Zoom */
-        background: transparent;
-    }
-}
-
-/* Message "Hello" caché au début */
-.message {
-    display: none;
-    font-size: 48px;
-    color: rgb(255, 0, 0); /* Initial color */
-    animation: colorShift 2s infinite;
-}
-
-/* Couleurs RGB animées pour le message */
-@keyframes colorShift {
-    0% { color: rgb(255, 0, 0); } /* Rouge */
-    33% { color: rgb(0, 255, 0); } /* Vert */
-    66% { color: rgb(0, 0, 255); } /* Bleu */
-    100% { color: rgb(255, 0, 0); } /* Retour au rouge */
-}
-
-/* Le message devient visible après le zoom */
-.visible {
-    display: block;
+body:target .hello {
+    bottom: calc(50% + 100px);
 }
