@@ -1,5 +1,5 @@
 document.getElementById('discord-login').addEventListener('click', () => {
-    const clientId = '1166902447353122896';
+    const clientId = '1273652953458147388';
     const redirectUri = 'https://edeniarp.github.io/neuille/';
     const scope = 'identify';
     
