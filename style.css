@@ -130,6 +130,7 @@ footer {
     opacity: 0; /* Initialement invisible */
     transform: translateY(30px); /* Légèrement décalé vers le bas */
     transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 1000; /* Assure que les icônes sont au-dessus des autres éléments */
 }
 
 .social-icons.show {
