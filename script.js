@@ -1,31 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('.section');
-    const navLinks = document.querySelectorAll('nav ul li a');
+    const form = document.getElementById('contact-form');
+    
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Empêche le rechargement de la page
+        
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const message = form.message.value.trim();
 
-    function handleScroll() {
-        const scrollPosition = window.scrollY + window.innerHeight * 0.75;
+        if (name && email && message) {
+            // Affichage d'un message de confirmation
+            alert('Merci pour votre message ! Je vous répondrai bientôt.');
+            
+            // Réinitialisation du formulaire
+            form.reset();
+        } else {
+            alert('Veuillez remplir tous les champs.');
+        }
+    });
 
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-
-            if (scrollPosition >= sectionTop && scrollPosition <= sectionTop + sectionHeight) {
-                section.style.opacity = 1;
-                section.style.transform = 'translateY(0)';
-            } else {
-                section.style.opacity = 0;
-                section.style.transform = 'translateY(20px)';
+    // Animation de la section "Projets" au défilement
+    const projectSections = document.querySelectorAll('.project');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
             }
         });
+    }, {
+        threshold: 0.2
+    });
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === document.querySelector('.section[style*="opacity: 1"]').id) {
-                link.classList.add('active');
-            }
-        });
-    }
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
+    projectSections.forEach(section => {
+        observer.observe(section);
+    });
 });
