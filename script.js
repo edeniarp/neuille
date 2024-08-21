@@ -1,9 +1,5 @@
 document.getElementById('discord-login').addEventListener('click', () => {
-    const clientId = '1273652953458147388';
-    const redirectUri = 'https://edeniarp.github.io/neuille/';
-    const scope = 'identify';
-    
-    window.location.href = `https://discord.com/oauth2/authorize?client_id=1273652953458147388&response_type=code&redirect_uri=https%3A%2F%2Fedeniarp.github.io%2Fneuille%2F&scope=identify`;
+    window.location.href = 'https://discord.com/oauth2/authorize?client_id=1273652953458147388&response_type=code&redirect_uri=https%3A%2F%2Fedeniarp.github.io%2Fneuille%2F&scope=identify';
 });
 
 window.onload = () => {
@@ -36,4 +32,3 @@ window.onload = () => {
         }
     }
 }
-
