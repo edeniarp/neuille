@@ -1,0 +1,123 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.enter-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 25px;
+    font-size: 24px;
+    cursor: pointer;
+    position: relative;
+    z-index: 20;
+    animation: pulse 2s infinite;
+    box-shadow: 0 0 20px yellow;
+}
+
+.enter-btn:hover {
+    box-shadow: 0 0 30px yellow;
+}
+
+.enter-btn:focus {
+    outline: none;
+}
+
+.enter-btn.zoom-out {
+    animation: zoomOut 1s forwards;
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(50);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.hello-page {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-size: 48px;
+    z-index: 10;
+}
+
+.hello-page h1 {
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: -150%;
+    left: -150%;
+    width: 400%;
+    height: 400%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 0, 0, 0.2),
+        rgba(255, 0, 0, 0.2) 10px,
+        rgba(0, 255, 0, 0.2) 10px,
+        rgba(0, 255, 0, 0.2) 20px,
+        rgba(0, 0, 255, 0.2) 20px,
+        rgba(0, 0, 255, 0.2) 30px
+    );
+    animation: slide 10s linear infinite;
+    z-index: 1;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%);
+    }
+}
+
