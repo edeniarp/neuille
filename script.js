@@ -12,6 +12,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Fonction pour les animations de défilement
     const sections = document.querySelectorAll("section");
+    const socialIcons = document.querySelector('.social-icons');
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', () => {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Apparition des icônes au défilement vers le bas
+        if (scrollTop > lastScrollTop) {
+            if (scrollTop > 300) { // Vous pouvez ajuster cette valeur
+                socialIcons.classList.add('show');
+            }
+        } else {
+            // Disparition des icônes au défilement vers le haut
+            if (scrollTop < 300) {
+                socialIcons.classList.remove('show');
+            }
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
 
     const options = {
         root: null,
@@ -31,4 +50,3 @@ document.addEventListener("DOMContentLoaded", function () {
         observer.observe(section);
     });
 });
-
