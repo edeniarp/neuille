@@ -3,23 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Webpage</title>
+    <title>Page Grise</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="button" id="animatedButton">Enter</div>
-        <div class="message" id="message">Hello</div>
+    <div class="scroll-container">
+        <div class="content"></div>
+        <div class="hello">Hello</div>
     </div>
-
-    <script>
-        const button = document.getElementById('animatedButton');
-        const message = document.getElementById('message');
-        
-        button.addEventListener('click', () => {
-            button.classList.add('zoom');
-            message.classList.add('visible');
-        });
-    </script>
 </body>
 </html>
