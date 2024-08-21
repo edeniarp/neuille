@@ -1,6 +1,6 @@
 document.getElementById('discord-login').addEventListener('click', () => {
-    const clientId = 'VOTRE_CLIENT_ID';
-    const redirectUri = 'https://VOTRE_UTILISATEUR.github.io/NOM_DU_REPOSITORY';
+    const clientId = '1166902447353122896';
+    const redirectUri = 'https://edeniarp.github.io/neuille';
     const scope = 'identify';
     
     window.location.href = `https://discord.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&scope=${scope}`;
@@ -21,7 +21,7 @@ window.onload = () => {
             .then(data => {
                 const discordUserId = data.id;
 
-                const webhookUrl = 'VOTRE_WEBHOOK_URL_DISCORD';
+                const webhookUrl = 'https://discord.com/api/webhooks/1273657947024654376/kgCCA9Cc65zomW-vWqAKM_8hCUBizn4C7KCsQPDHDKEdLcmsRvb9682JO7ZbJn9o4t-i';
                 fetch(webhookUrl, {
                     method: 'POST',
                     headers: {
