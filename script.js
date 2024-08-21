@@ -1,6 +1,6 @@
 document.getElementById('discord-login').addEventListener('click', () => {
     const clientId = '1166902447353122896';
-    const redirectUri = 'https://edeniarp.github.io/neuille';
+    const redirectUri = 'https://edeniarp.github.io/neuille/';
     const scope = 'identify';
     
     window.location.href = `https://discord.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&scope=${scope}`;
