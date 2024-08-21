@@ -27,30 +27,39 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 10px;
 }
 
 nav ul li a {
     color: #f1f1f1;
     text-decoration: none;
     font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 nav ul li a:hover {
     color: #f39c12;
-    transition: color 0.3s ease;
+    background-color: rgba(243, 156, 18, 0.2);
+    border-radius: 5px;
 }
 
 /* Sections */
+main {
+    padding-top: 60px; /* For fixed header */
+}
+
 .section {
-    padding: 60px 20px;
+    padding: 40px 20px;
     min-height: 100vh;
-    transition: opacity 0.5s ease;
+    background: #2c3e50;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .home {
     background-color: #2c3e50;
-    color: #ecf0f1;
 }
 
 .about {
@@ -66,11 +75,12 @@ nav ul li a:hover {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
     text-align: center;
 }
 
+/* Boutons */
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -92,13 +102,13 @@ nav ul li a:hover {
     background-color: #fff;
     color: #333;
     border-radius: 8px;
-    padding: 20px;
+    padding: 15px;
     margin: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -107,5 +117,5 @@ footer {
     background-color: #333;
     color: #f1f1f1;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px 20px;
 }
