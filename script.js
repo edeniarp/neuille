@@ -1,33 +1,23 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Fonction pour afficher les détails
-    window.toggleDetails = function () {
-        const details = document.getElementById("details");
-        if (details.style.display === "none") {
-            details.style.display = "block";
-            details.style.animation = "fadeIn 1s ease";
-        } else {
-            details.style.display = "none";
-        }
-    };
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.section');
+    const navLinks = document.querySelectorAll('nav ul li a');
 
-    // Fonction pour les animations de défilement
-    const socialIcons = document.querySelector('.social-icons');
-    let lastScrollTop = 0;
-
-    window.addEventListener('scroll', () => {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        // Apparition des icônes au défilement vers le bas
-        if (scrollTop > lastScrollTop) {
-            if (scrollTop > 300) { // Ajustez cette valeur selon le besoin
-                socialIcons.classList.add('show');
+    function handleScroll() {
+        const scrollPosition = window.scrollY + 100;
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            if (scrollPosition >= sectionTop && scrollPosition <= sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === section.id) {
+                        link.classList.add('active');
+                    }
+                });
             }
-        } else {
-            // Disparition des icônes au défilement vers le haut
-            if (scrollTop < 300) {
-                socialIcons.classList.remove('show');
-            }
-        }
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    });
+        });
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
 });
