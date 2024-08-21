@@ -3,38 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des Membres</title>
+    <title>Interactive Webpage</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <div class="bouncing-box">
-            <h2>Membres du Serveur</h2>
-            <ul id="member-list">
-                <!-- Les membres seront ajoutés ici via JavaScript -->
-            </ul>
-        </div>
+        <div class="button" id="animatedButton">Enter</div>
+        <div class="message" id="message">Hello</div>
     </div>
 
     <script>
-        const guildId = '1273653714858676255';  // Remplacez par l'ID de votre serveur
-        const token = 'MTI3MzY1Mjk1MzQ1ODE0NzM4OA.GzdfMx.aFC9IRxqNmQIfI-ZweAmyMYne-wy9oZqqNqxxU';  // Remplacez par le token de votre bot
-
-        fetch(`https://discord.com/api/v10/guilds/${guildId}/members?limit=1000`, {
-            headers: {
-                Authorization: `Bot ${token}`
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            const memberList = document.getElementById('member-list');
-            data.forEach(member => {
-                const listItem = document.createElement('li');
-                listItem.textContent = member.user.username;
-                memberList.appendChild(listItem);
-            });
-        })
-        .catch(error => console.error('Erreur lors de la récupération des membres:', error));
+        const button = document.getElementById('animatedButton');
+        const message = document.getElementById('message');
+        
+        button.addEventListener('click', () => {
+            button.classList.add('zoom');
+            message.classList.add('visible');
+        });
     </script>
 </body>
 </html>
