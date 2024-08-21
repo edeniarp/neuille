@@ -3,67 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ma Page Personnelle</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Portfolio de [Votre Nom]</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav>
             <ul>
                 <li><a href="#home">Accueil</a></li>
-                <li><a href="#about">À propos</a></li>
+                <li><a href="#about">À Propos</a></li>
                 <li><a href="#projects">Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <div class="hero">
+            <h1>Bonjour, je suis [Votre Nom]</h1>
+            <p>Développeur Web Passionné</p>
+            <a href="#contact" class="cta-button">Contactez-moi</a>
+        </div>
     </header>
-    
-    <main>
-        <section id="home" class="section home">
-            <div class="container">
-                <h1>Bienvenue sur ma page personnelle !</h1>
-                <p>Explorez mes projets et apprenez-en plus sur moi.</p>
-                <a href="#about" class="btn">En savoir plus</a>
-            </div>
-        </section>
-        
-        <section id="about" class="section about">
-            <div class="container">
-                <h2>À propos de moi</h2>
-                <p>Je suis un passionné de développement web avec une expertise dans la création de sites dynamiques et interactifs.</p>
-                <a href="https://discord.com" class="btn" target="_blank">Rejoignez-moi sur Discord</a>
-            </div>
-        </section>
-        
-        <section id="projects" class="section projects">
-            <div class="container">
-                <h2>Mes Projets</h2>
-                <div class="project-card">
-                    <h3>Projet 1</h3>
-                    <p>Une brève description de ce projet.</p>
-                    <a href="#" class="btn">Voir le projet</a>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>À Propos de Moi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Je suis un développeur web avec une passion pour la création d'applications élégantes et fonctionnelles.</p>
+                    <p>Avec plusieurs années d'expérience, j'ai travaillé sur divers projets allant de petits sites personnels à de grandes applications d'entreprise.</p>
                 </div>
-                <div class="project-card">
-                    <h3>Projet 2</h3>
-                    <p>Une brève description de ce projet.</p>
-                    <a href="#" class="btn">Voir le projet</a>
+                <div class="about-image">
+                    <img src="path-to-your-image.jpg" alt="[Votre Nom]">
                 </div>
             </div>
-        </section>
-        
-        <section id="contact" class="section contact">
-            <div class="container">
-                <h2>Contact</h2>
-                <p>Vous pouvez me contacter à l'adresse suivante :</p>
-                <a href="mailto:example@example.com" class="btn">Envoyer un email</a>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Mes Projets</h2>
+            <div class="project-container">
+                <div class="project">
+                    <img src="path-to-project-image1.jpg" alt="Projet 1">
+                    <div class="project-overlay">
+                        <h3>Projet 1</h3>
+                        <p>Description détaillée du projet 1, mettant en avant les technologies utilisées et les résultats obtenus.</p>
+                        <a href="#" class="project-link">Voir le projet</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="path-to-project-image2.jpg" alt="Projet 2">
+                    <div class="project-overlay">
+                        <h3>Projet 2</h3>
+                        <p>Description détaillée du projet 2, mettant en avant les défis rencontrés et les solutions apportées.</p>
+                        <a href="#" class="project-link">Voir le projet</a>
+                    </div>
+                </div>
+                <!-- Ajoutez d'autres projets ici -->
             </div>
-        </section>
-    </main>
-    
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contactez-moi</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2024 Mon Nom. Tous droits réservés.</p>
+        <div class="container">
+            <p>&copy; 2024 [Votre Nom]. Tous droits réservés.</p>
+            <div class="social-media">
+                <a href="https://twitter.com/[VotreTwitter]" target="_blank">Twitter</a>
+                <a href="https://linkedin.com/in/[VotreLinkedIn]" target="_blank">LinkedIn</a>
+                <a href="https://github.com/[VotreGithub]" target="_blank">GitHub</a>
+            </div>
+        </div>
     </footer>
-    
-    <script src="script.js"></script>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
