@@ -1,20 +1,24 @@
-/* Style global */
+/* Style général */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: #1e1e1e;
+    color: #f1f1f1;
 }
 
+/* En-tête */
 header {
-    background-color: #000;
-    color: #fff;
-    padding: 10px 20px;
-    text-align: center;
+    background-color: #333;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-header nav ul {
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -22,128 +26,86 @@ header nav ul {
     justify-content: center;
 }
 
-header nav ul li {
+nav ul li {
     margin: 0 15px;
 }
 
-header nav ul li a {
-    color: #fff;
+nav ul li a {
+    color: #f1f1f1;
     text-decoration: none;
     font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
     transition: color 0.3s ease;
 }
 
-header nav ul li a:hover {
-    color: #ffd700;
+/* Sections */
+.section {
+    padding: 60px 20px;
+    min-height: 100vh;
+    transition: opacity 0.5s ease;
 }
 
-section {
-    padding: 50px 20px;
+.home {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}
+
+.about {
+    background-color: #3498db;
+}
+
+.projects {
+    background-color: #9b59b6;
+}
+
+.contact {
+    background-color: #e74c3c;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
     text-align: center;
 }
 
-#home {
-    background-color: #000;
-    color: #ffd700;
-    padding: 100px 20px;
-    background-image: linear-gradient(to right, #000, #0056b3);
-}
-
-#about, #projects, #contact, #extra-content {
-    background-color: #fff;
-    color: #000;
-}
-
-button {
+.btn {
+    display: inline-block;
     padding: 10px 20px;
-    background-color: #ffd700;
-    border: none;
+    color: #fff;
+    background-color: #34495e;
+    text-decoration: none;
     border-radius: 5px;
-    color: #000;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-button:hover {
-    background-color: #0056b3;
-    color: #fff;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    to {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-}
-
-section {
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-.project {
-    margin: 20px;
-    padding: 20px;
-    background-color: #0056b3;
-    color: #fff;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.project:hover {
+.btn:hover {
+    background-color: #f39c12;
     transform: scale(1.05);
-    background-color: #ffd700;
-    color: #000;
 }
 
+/* Cartes de projet */
+.project-card {
+    background-color: #fff;
+    color: #333;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Pied de page */
 footer {
-    background-color: #000;
-    color: #ffd700;
-    padding: 10px;
+    background-color: #333;
+    color: #f1f1f1;
     text-align: center;
-}
-
-/* Styles pour les icônes sociales avec animations */
-.social-icons {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-    opacity: 0; /* Initialement invisible */
-    transform: translateY(30px); /* Légèrement décalé vers le bas */
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    z-index: 1000; /* Assure que les icônes sont au-dessus des autres éléments */
-}
-
-.social-icons.show {
-    opacity: 1; /* Devenir visible */
-    transform: translateY(0); /* Ramener à sa position originale */
-}
-
-.social-icons img {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease;
-}
-
-.social-icons img:hover {
-    transform: scale(1.2);
+    padding: 10px 0;
 }
