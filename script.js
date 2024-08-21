@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // Fonction pour les animations de défilement
-    const sections = document.querySelectorAll("section");
     const socialIcons = document.querySelector('.social-icons');
     let lastScrollTop = 0;
 
@@ -20,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Apparition des icônes au défilement vers le bas
         if (scrollTop > lastScrollTop) {
-            if (scrollTop > 300) { // Vous pouvez ajuster cette valeur
+            if (scrollTop > 300) { // Ajustez cette valeur selon le besoin
                 socialIcons.classList.add('show');
             }
         } else {
@@ -30,23 +29,5 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    });
-
-    const options = {
-        root: null,
-        threshold: 0.25,
-        rootMargin: "0px"
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-            }
-        });
-    }, options);
-
-    sections.forEach(section => {
-        observer.observe(section);
     });
 });
