@@ -10,31 +10,24 @@ body, html {
 }
 
 .container {
-    position: relative;
-    height: 100%;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10;
+    height: 100%;
+    width: 100%;
 }
 
 .enter-btn {
-    background-color: black;
+    background-color: transparent;
     color: white;
-    border: none;
+    border: 2px solid white;
+    border-radius: 50%;
     padding: 20px 40px;
-    border-radius: 25px;
     font-size: 24px;
     cursor: pointer;
     position: relative;
     z-index: 20;
-    animation: pulse 2s infinite;
-    box-shadow: 0 0 20px yellow;
-}
-
-.enter-btn:hover {
-    box-shadow: 0 0 30px yellow;
+    transition: transform 1s;
 }
 
 .enter-btn:focus {
@@ -55,18 +48,6 @@ body, html {
     }
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
 .hello-page {
     display: none;
     justify-content: center;
@@ -74,13 +55,13 @@ body, html {
     height: 100%;
     width: 100%;
     background-color: black;
-    color: white;
+    color: yellow;
     font-size: 48px;
     z-index: 10;
 }
 
 .hello-page h1 {
-    animation: fadeIn 2s forwards;
+    animation: fadeIn 1s forwards;
 }
 
 @keyframes fadeIn {
@@ -91,33 +72,3 @@ body, html {
         opacity: 1;
     }
 }
-
-body::before {
-    content: '';
-    position: absolute;
-    top: -150%;
-    left: -150%;
-    width: 400%;
-    height: 400%;
-    background: repeating-linear-gradient(
-        45deg,
-        rgba(255, 0, 0, 0.2),
-        rgba(255, 0, 0, 0.2) 10px,
-        rgba(0, 255, 0, 0.2) 10px,
-        rgba(0, 255, 0, 0.2) 20px,
-        rgba(0, 0, 255, 0.2) 20px,
-        rgba(0, 0, 255, 0.2) 30px
-    );
-    animation: slide 10s linear infinite;
-    z-index: 1;
-}
-
-@keyframes slide {
-    0% {
-        transform: translateX(0) translateY(0);
-    }
-    100% {
-        transform: translateX(100%) translateY(100%);
-    }
-}
-
