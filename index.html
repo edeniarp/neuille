@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Présentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="intro">
+            <h1>Bienvenue sur ma page !</h1>
+            <p>Je suis un développeur passionné par le web et le design interactif.</p>
+            <button onclick="window.location.href='https://discord.com/'">Rejoignez-moi sur Discord</button>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>À propos de moi</h2>
+        <p>Je m'appelle [Votre Nom] et je suis un développeur spécialisé en création de sites web interactifs.</p>
+        <button onclick="toggleDetails()">Voir plus</button>
+        <div id="details" style="display: none;">
+            <p>J'ai travaillé sur divers projets allant de simples sites web statiques à des applications web dynamiques.</p>
+            <p>Je m'intéresse particulièrement à l'animation et aux transitions pour rendre les expériences utilisateurs plus agréables.</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Mes Projets</h2>
+        <div class="project" onclick="window.open('https://github.com/', '_blank')">
+            <h3>Projet 1</h3>
+            <p>Un projet web interactif utilisant les dernières technologies front-end.</p>
+        </div>
+        <div class="project" onclick="window.open('https://github.com/', '_blank')">
+            <h3>Projet 2</h3>
+            <p>Un autre projet passionnant que j'ai développé récemment.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contactez-moi</h2>
+        <p>Vous pouvez me contacter via les réseaux sociaux suivants :</p>
+        <div class="social-icons">
+            <a href="https://discord.com/"><img src="discord.png" alt="Discord"></a>
+            <a href="https://github.com/"><img src="github.png" alt="GitHub"></a>
+            <a href="mailto:youremail@example.com"><img src="email.png" alt="Email"></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 [Votre Nom]. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
